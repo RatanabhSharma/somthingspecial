@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/first\ time.jpg') no-repeat center center fixed;
+    background-size: contain; /* Cover the entire background without stretching or cropping */
+    transition: background 0.5s ease;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10vh; /* Adjust as needed */
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to next line */
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between image cards */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+#gallery img {
+    max-width: 60%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    width: 50px; /* Initial width of image cards */
+}
+
+#gallery img:hover {
+    transform: scale(1.1);
+}
+
+.photo-card {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(33.33% - 20px);
+    max-width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px; /* Adjust as needed */
+}
+
+#message {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: rgb(248, 215, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    #gallery {
+        flex-direction: row; /* Change direction to horizontal */
+        align-items: center; /* Center items horizontally */
+    }
+
+    #gallery img {
+        width: 50px; /* Reduce width for smaller screens */
+    } 
+
+    #message {
+        max-width: 50%; /* Adjust message width for smaller screens */
+    }
+
+    button {
+        margin-bottom: center; /* Center button horizontally */
+    }
+
+    .photo-card {
+        width: calc(40% - 30px); /* Adjust width for smaller screens */
+        max-width: 150px; /* Adjust maximum width for smaller screens */
+    }
+
+    body {
+        background-size: cover; /* Fit the background image within the container without cropping */
+    }
+}

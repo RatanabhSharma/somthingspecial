@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Something Special</title>
+</head>
+<body>
+    <div id="container">
+        <div id="message-container">
+            <div id="message">
+                Mota and Duffer Bacha😂😊💕
+            </div>
+    
+            <button onclick="resetBackground()">Reset Background</button>
+        </div>
+    <div id="gallery" onclick="changeBackground(event)">
+        <img src="images/pic1.jpg" data-image="url_of_image1.jpg" data-message="Teri dosti se bhara har pal mere liye sabse keemti hai, tu meri zindagi ki sabse pyaari dost hai..🥰💛">
+        <img src="images/pic2.jpg" data-image="url_of_image2.jpg" data-message="Teri muskurahat se hi meri duniya chamakti hai, teri dosti se hi meri zindagi mei roshni aati hai💙💚🧡💛❤️🩷">
+        <img src="images/pic3.jpg" data-image="url_of_image3.jpg" data-message="Meri zindagi ki har khoobsurat kahani ka hero tu hai, meri pyaari dost🥰💖">
+        <img src="images/pic4.jpg" data-image="url_of_image3.jpg" data-message="Teri dosti meri zindagi ki sabse khoobsurat imarat hai, jise main hamesha sawarkar ke rakhoonga💕😊">
+        <img src="images/pic5.jpg" data-image="url_of_image3.jpg" data-message="Tere bina meri zindagi adhoori hai, tu hai meri dost, meri saathi, meri zindagi ka sabse pyaara hissa.❤️🤞">
+    </div>
+
+    <script>
+        const defaultBackground = 'images/first time.jpg';
+        const imageUrls = [
+            'images/pic1.jpg',
+            'images/pic2.jpg',
+            'images/pic3.jpg',
+            'images/pic4.jpg',
+            'images/pic5.jpg',
+            'images/birthday.jpg'
+        ];
+
+        function changeBackground(event) {
+            const clickedImage = event.target;
+            const imageUrl = clickedImage.getAttribute('src'); // Get the image source URL
+            const message = clickedImage.getAttribute('data-message');
+
+            document.body.style.backgroundImage = `url('${imageUrl}')`;
+            document.getElementById('message').innerText = message;
+        }
+
+        function resetBackground() {
+            document.body.style.backgroundImage = `url('${defaultBackground}')`;
+            document.getElementById('message').innerText = 'Mota and Duffer Bacha😂😊💕';
+        }
+    </script>
+</body>
+</html>
